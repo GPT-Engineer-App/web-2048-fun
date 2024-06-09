@@ -1,4 +1,6 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, Text, Button } from "@chakra-ui/react";
+import introJs from "intro.js";
+import "intro.js/introjs.css";
 
 function Instructions() {
   return (
@@ -18,6 +20,9 @@ function Instructions() {
       <Text fontSize="md" mb={2}>
         3. Step three: Win the game!
       </Text>
+      <Button onClick={() => introJs().start()} colorScheme="teal" mt={4}>
+        Start Guide
+      </Button>
     </Box>
   );
 }

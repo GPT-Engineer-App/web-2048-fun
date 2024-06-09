@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, VStack, HStack, Box, Text, Button, useToast } from "@chakra-ui/react";
+import introJs from "intro.js";
+import "intro.js/introjs.css";
 import { motion } from "framer-motion";
 import { FaUndo } from "react-icons/fa";
 
@@ -154,9 +156,11 @@ const Index = () => {
   }, [grid, score, history]);
 
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center" data-intro="This is the game board. Use arrow keys to move tiles.">
       <VStack spacing={4}>
-        <Text fontSize="2xl">2048 Game</Text>
+        <Text fontSize="2xl" data-intro="This is your current score.">
+          2048 Game
+        </Text>
         <Text>Score: {score}</Text>
         <VStack spacing={1}>
           {grid.map((row, rowIndex) => (
@@ -173,7 +177,7 @@ const Index = () => {
             </HStack>
           ))}
         </VStack>
-        <Button leftIcon={<FaUndo />} onClick={handleUndo} colorScheme="teal" variant="solid">
+        <Button leftIcon={<FaUndo />} onClick={handleUndo} colorScheme="teal" variant="solid" data-intro="Click here to undo your last move.">
           Undo
         </Button>
       </VStack>
