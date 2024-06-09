@@ -1,8 +1,13 @@
 import { Box, Heading, Text, Button } from "@chakra-ui/react";
+import { useEffect } from "react";
 import introJs from "intro.js";
 import "intro.js/introjs.css";
 
 function Instructions() {
+  useEffect(() => {
+    introJs().start();
+  }, []);
+
   return (
     <Box p={5}>
       <Heading as="h1" size="xl" mb={5}>
