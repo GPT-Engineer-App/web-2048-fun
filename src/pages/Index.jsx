@@ -76,6 +76,35 @@ const checkGameOver = (grid) => {
   return true;
 };
 
+const getCellColor = (value) => {
+  switch (value) {
+    case 2:
+      return "gray.200";
+    case 4:
+      return "gray.300";
+    case 8:
+      return "orange.300";
+    case 16:
+      return "orange.400";
+    case 32:
+      return "orange.500";
+    case 64:
+      return "orange.600";
+    case 128:
+      return "yellow.300";
+    case 256:
+      return "yellow.400";
+    case 512:
+      return "yellow.500";
+    case 1024:
+      return "green.300";
+    case 2048:
+      return "green.400";
+    default:
+      return "gray.200";
+  }
+};
+
 const Index = () => {
   const [grid, setGrid] = useState(getInitialGrid());
   const [score, setScore] = useState(0);
@@ -132,7 +161,7 @@ const Index = () => {
           {grid.map((row, rowIndex) => (
             <HStack key={rowIndex} spacing={1}>
               {row.map((cell, cellIndex) => (
-                <Box key={cellIndex} width="60px" height="60px" display="flex" justifyContent="center" alignItems="center" bg={cell === 0 ? "gray.200" : "orange.300"} borderRadius="md">
+                <Box key={cellIndex} width="60px" height="60px" display="flex" justifyContent="center" alignItems="center" bg={getCellColor(cell)} borderRadius="md">
                   <Text fontSize="xl" fontWeight="bold">
                     {cell !== 0 && cell}
                   </Text>
