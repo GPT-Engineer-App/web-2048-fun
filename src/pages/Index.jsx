@@ -133,10 +133,10 @@ const Index = () => {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === "ArrowUp") handleMove(1);
-    if (e.key === "ArrowRight") handleMove(2);
-    if (e.key === "ArrowDown") handleMove(3);
-    if (e.key === "ArrowLeft") handleMove(0);
+    if (e.key === "ArrowUp") handleMove(3);
+    if (e.key === "ArrowRight") handleMove(0);
+    if (e.key === "ArrowDown") handleMove(1);
+    if (e.key === "ArrowLeft") handleMove(2);
   };
 
   const handleUndo = () => {
