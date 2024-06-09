@@ -3,7 +3,7 @@ import { Container, VStack, HStack, Box, Text, Button, useToast } from "@chakra-
 import { motion } from "framer-motion";
 import { FaUndo } from "react-icons/fa";
 
-const SIZE = 4;
+const SIZE = 8;
 
 const getInitialGrid = () => {
   const grid = Array(SIZE)
