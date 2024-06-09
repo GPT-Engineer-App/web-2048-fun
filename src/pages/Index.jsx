@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, VStack, HStack, Box, Text, Button, useToast } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import { FaUndo } from "react-icons/fa";
 
 const SIZE = 4;
@@ -161,11 +162,13 @@ const Index = () => {
           {grid.map((row, rowIndex) => (
             <HStack key={rowIndex} spacing={1}>
               {row.map((cell, cellIndex) => (
-                <Box key={cellIndex} width="60px" height="60px" display="flex" justifyContent="center" alignItems="center" bg={getCellColor(cell)} borderRadius="md">
-                  <Text fontSize="xl" fontWeight="bold">
-                    {cell !== 0 && cell}
-                  </Text>
-                </Box>
+                <motion.div key={cellIndex} layout initial={{ scale: 0.8 }} animate={{ scale: 1 }} transition={{ duration: 0.2 }}>
+                  <Box width="60px" height="60px" display="flex" justifyContent="center" alignItems="center" bg={getCellColor(cell)} borderRadius="md">
+                    <Text fontSize="xl" fontWeight="bold">
+                      {cell !== 0 && cell}
+                    </Text>
+                  </Box>
+                </motion.div>
               ))}
             </HStack>
           ))}
